@@ -1,12 +1,26 @@
 #include <iostream>
 using namespace std;
 
+void tampilkanMenu() {
+    cout << "\n=== TIKET BUS ===\n"
+         << "1. Malang-Surabaya (35rb)\n"
+         << "2. Malang-Pasuruan (20rb)\n"
+         << "3. Malang-Jombang (25rb)\n"
+         << "Pilih (1-3): ";
+}
+
+void cetakStruk(int totalBayar) {
+    cout << "\n==================\n"
+         << "Total Bayar: Rp " << totalBayar << "\n"
+         << "Terima Kasih!\n";
+}
+
 int main() {
     int pilihan, jumlah, total = 0;
     char lanjut;
 
     do {
-        cout << "\n=== TIKET BUS ===\n1. Malang-Surabaya (35rb)\n2. Malang-Pasuruan (20rb)\n3. Malang-Jombang (25rb)\nPilih (1-3): ";
+        tampilkanMenu();
         cin >> pilihan;
         
         if (pilihan < 1 || pilihan > 3) {
@@ -24,6 +38,6 @@ int main() {
         cin >> lanjut;
     } while (lanjut == 'y' || lanjut == 'Y');
 
-    cout << "\n==================\nTotal Bayar: Rp " << total << "\nTerima Kasih!\n";
+    cetakStruk(total);
     return 0;
 }
